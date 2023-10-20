@@ -94,7 +94,7 @@ public class GarageTest {
 	 * directement dans la console (System.out)<br>
 	 * On peut ensuite vérifier que le contenu de la chaîne générée est conforme au
 	 * résultat attendu.
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	@Test
 	public void testCorrectPrintFormat() throws Exception {
@@ -109,22 +109,22 @@ public class GarageTest {
 		PrintStream ps = new PrintStream(os);
 		// On imprime dans ps
 		v1.imprimeStationnements(ps);
-		
+
 		// On récupère le résultat de l'impression
 		String output = os.toString("UTF8");
 
 		// Le garage g1 doit apparaître une fois
 		assertEquals(1, countSubstring(output, g1.toString()),
-                         g1.toString() + " doit apparaître une fois");
+				g1.toString() + " doit apparaître une fois");
 		// Le garage g2 doit apparaître une fois
 		assertEquals(1,	countSubstring(output, g2.toString()),
-                    g2.toString() + " doit apparaître une fois");
+				g2.toString() + " doit apparaître une fois");
 
 		assertEquals(3,	countSubstring(output, "Stationnement"),
-                        "On doit imprimer trois stationnements"	);
+				"On doit imprimer trois stationnements"	);
 
 		assertEquals(1,	countSubstring(output, "en cours"),
-                        "Il doit y avoir un seul stationnement en cours");
+				"Il doit y avoir un seul stationnement en cours");
 	}
 
 	/**
